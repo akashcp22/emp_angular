@@ -1,0 +1,36 @@
+<div class="container-fluid row" style="height: 90vh;">
+    <div class="col-2 p-0" *ngIf="sideBar">
+        <app-side></app-side>
+       
+    </div>
+    <div [class]=" sideBar?'col-10':'container-fluid'">
+        <div class="row">
+            <div class="col-8 p-0">
+                <div class="p-5 d-flex justify-content-center"    style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAAA1BMVEUbqPBsarW2AAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC');">
+                    <button class="btn" (click)="toggleSideBar()"><i class="fa-solid fa-bars"></i></button>
+                <div>
+                     <h1>Admin Dashboard</h1>
+                     <p>{{adminEmail}}</p>
+                </div>
+                </div>
+                <div class="row">
+<div class="col">
+<app-calender></app-calender>
+</div>
+<div class="col">
+<app-chart></app-chart>
+</div>
+                </div>
+            </div>
+            <div class="col-4 p-0">
+
+                <app-profile (adminEvent)="onAdminChange($event)"></app-profile>
+
+                <div class="mt-2 border p-4 shadow " style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAAA1BMVEUbqPBsarW2AAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIALA8UNAAFusnLHAAAAAElFTkSuQmCC);">
+                    <h3>Employee count: {{empCount}} </h3>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
